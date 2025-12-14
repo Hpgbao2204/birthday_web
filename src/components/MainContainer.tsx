@@ -1,124 +1,127 @@
 import { motion } from 'framer-motion';
 import config from '../config';
-import HeroSection from './HeroSection';
 import WishForm from './WishForm';
-import FloatingIcons from './FloatingIcons';
+import { Link } from 'react-router-dom';
 
 const MainContainer = () => {
   return (
-    <div className="relative min-h-screen flex items-center justify-center py-12 px-4">
-      {/* Floating Icons */}
-      <FloatingIcons />
-
-      {/* Main Content Container */}
+    <div className="relative h-screen flex items-center justify-center px-8 overflow-hidden">
       <motion.div
-        initial={{ opacity: 0, scale: 0.9 }}
+        initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8 }}
-        className="relative z-10 w-full max-w-4xl"
+        className="relative z-10 w-full max-w-7xl"
       >
-        {/* Decorative Background Blob */}
-        <motion.div
-          className="absolute inset-0 rounded-[3rem] opacity-20 blur-3xl"
-          style={{ backgroundColor: config.colors.accent }}
-          animate={{
-            scale: [1, 1.1, 1],
-            rotate: [0, 5, -5, 0],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: 'easeInOut',
-          }}
-        />
-
-        {/* Main Content Card */}
+        {/* Single Card with 2 sections */}
         <div
-          className="relative bg-white rounded-[3rem] shadow-2xl p-8 md:p-12 lg:p-16 border-4"
-          style={{
-            borderColor: config.colors.accent,
-            backgroundColor: 'rgba(255, 255, 255, 0.95)',
-          }}
+          className="bg-white/95 backdrop-blur-md rounded-3xl shadow-2xl overflow-hidden"
+          style={{ border: `3px solid ${config.colors.accent}` }}
         >
-          {/* Decorative Corner Elements */}
-          <div className="absolute top-4 left-4 text-4xl">🎈</div>
-          <div className="absolute top-4 right-4 text-4xl">🎈</div>
-          <div className="absolute bottom-4 left-4 text-4xl">🎁</div>
-          <div className="absolute bottom-4 right-4 text-4xl">🎁</div>
-
-          {/* Content */}
-          <div className="space-y-12">
-            <HeroSection />
-            
-            {/* Divider with hearts */}
+          <div className="grid md:grid-cols-2 divide-x-2" style={{ borderColor: config.colors.accent }}>
+            {/* LEFT SIDE - Welcome Message */}
             <motion.div
-              className="flex items-center justify-center gap-4 py-6"
-              initial={{ opacity: 0, scaleX: 0 }}
-              animate={{ opacity: 1, scaleX: 1 }}
-              transition={{ delay: 1.5, duration: 0.8 }}
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="p-8 flex flex-col justify-between"
             >
-              <div
-                className="h-0.5 flex-1 rounded-full"
-                style={{ backgroundColor: config.colors.accent }}
-              />
-              <motion.span
-                className="text-3xl"
-                animate={{ rotate: [0, 15, -15, 0] }}
-                transition={{ duration: 2, repeat: Infinity }}
+              {/* Header */}
+              <motion.div
+                className="text-center mb-4"
+                whileHover={{ scale: 1.05 }}
+                animate={{ scale: [1, 1.02, 1] }}
+                transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
               >
-                💖
-              </motion.span>
-              <div
-                className="h-0.5 flex-1 rounded-full"
-                style={{ backgroundColor: config.colors.accent }}
-              />
+                <motion.h1
+                  whileHover={{ scale: 1.1 }}
+                  className="text-5xl md:text-6xl font-bold mb-3 pb-2"
+                  style={{
+                    background: `linear-gradient(135deg, ${config.colors.accent}, ${config.colors.accentHover})`,
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    fontFamily: "'Pacifico', cursive",
+                    lineHeight: '1.2',
+                    paddingBottom: '0.5rem',
+                  }}
+                >
+                  {config.hero.name} 💕
+                </motion.h1>
+                <motion.p
+                  whileHover={{ scale: 1.05 }}
+                  className="text-2xl font-semibold"
+                  style={{ color: config.colors.textPrimary }}
+                >
+                  {config.hero.birthday}
+                </motion.p>
+              </motion.div>
+
+              {/* Main message */}
+              <motion.h2
+                whileHover={{ scale: 1.03 }}
+                transition={{ type: 'spring', stiffness: 300 }}
+                className="text-xl md:text-2xl font-bold text-center mb-3"
+                style={{ color: config.colors.textPrimary }}
+              >
+                {config.hero.mainMessage}
+              </motion.h2>
+
+              {/* Sub message - canh đều, text dư canh trái */}
+              <div className="flex-1 flex items-center justify-center px-4">
+                <motion.p
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ type: 'spring', stiffness: 300 }}
+                  className="text-base leading-relaxed whitespace-pre-line text-justify max-w-lg"
+                  style={{
+                    color: config.colors.textSecondary,
+                    textAlignLast: 'left', // Dòng cuối canh trái
+                  }}
+                >
+                  {config.hero.subMessage}
+                </motion.p>
+              </div>
+
+              {/* Bottom section */}
+              <div>
+                {/* Hearts */}
+                <div className="flex justify-center gap-2 mb-4 text-2xl">
+                  <motion.span animate={{ y: [0, -10, 0] }} transition={{ duration: 1.5, repeat: Infinity }}>
+                    💕
+                  </motion.span>
+                  <motion.span animate={{ y: [0, -10, 0] }} transition={{ duration: 1.5, repeat: Infinity, delay: 0.3 }}>
+                    ✨
+                  </motion.span>
+                  <motion.span animate={{ y: [0, -10, 0] }} transition={{ duration: 1.5, repeat: Infinity, delay: 0.6 }}>
+                    🌸
+                  </motion.span>
+                </div>
+
+                {/* View all button */}
+                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1 }} className="text-center">
+                  <Link to="/wishes">
+                    <motion.button
+                      whileHover={{ scale: 1.05, y: -2 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="px-6 py-3 rounded-2xl font-bold text-white text-base shadow-xl"
+                      style={{ background: `linear-gradient(135deg, ${config.colors.accent}, ${config.colors.accentHover})` }}
+                    >
+                      ✨ Xem tất cả lời chúc
+                    </motion.button>
+                  </Link>
+                </motion.div>
+              </div>
             </motion.div>
 
-            <WishForm />
+            {/* RIGHT SIDE - Wish Form */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="p-8 flex items-center"
+            >
+              <WishForm />
+            </motion.div>
           </div>
         </div>
-
-        {/* Floating particles around container */}
-        <motion.div
-          className="absolute -top-10 -left-10 text-6xl"
-          animate={{
-            y: [0, -20, 0],
-            rotate: [0, 10, -10, 0],
-          }}
-          transition={{ duration: 4, repeat: Infinity }}
-        >
-          ✨
-        </motion.div>
-        <motion.div
-          className="absolute -top-10 -right-10 text-6xl"
-          animate={{
-            y: [0, -15, 0],
-            rotate: [0, -10, 10, 0],
-          }}
-          transition={{ duration: 3.5, repeat: Infinity, delay: 0.5 }}
-        >
-          🌟
-        </motion.div>
-        <motion.div
-          className="absolute -bottom-10 -left-10 text-6xl"
-          animate={{
-            y: [0, -25, 0],
-            rotate: [0, 15, -15, 0],
-          }}
-          transition={{ duration: 4.5, repeat: Infinity, delay: 1 }}
-        >
-          🎀
-        </motion.div>
-        <motion.div
-          className="absolute -bottom-10 -right-10 text-6xl"
-          animate={{
-            y: [0, -20, 0],
-            rotate: [0, -15, 15, 0],
-          }}
-          transition={{ duration: 3.8, repeat: Infinity, delay: 1.5 }}
-        >
-          🌸
-        </motion.div>
       </motion.div>
     </div>
   );
