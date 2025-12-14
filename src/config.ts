@@ -36,36 +36,26 @@ const config: BirthdayConfig = {
 
   // Danh sách hình ảnh kỷ niệm (URL hoặc đường dẫn local)
   images: [
-    "/fig_test.png",
-    "/fig_test.png",
-    "/fig_test.png",
-    "/fig_test.png",
-    "/fig_test.png",
-    "/fig_test.png",
-    "/fig_test.png",
-    "/fig_test.png",
-    "/fig_test.png",
-    "/fig_test.png",
-    "/fig_test.png",
-    "/fig_test.png",
-    "/fig_test.png",
-    "/fig_test.png",
-    "/fig_test.png",
+    "/fig_test1.png",
+    "/fig_test2.png",
+    "/fig_test3.png",
+    "/fig_test4.png",
   ],
 
-  // Cấu hình màu sắc (Web3 Vibrant Theme - Gradient & Neon)
+  // Cấu hình màu sắc (Pastel Pink & Rose theme - Nhẹ nhàng)
   colors: {
-    background: "#0a0118", // Dark purple/black - Web3 style
-    backgroundSecondary: "#1a0b2e", // Deep purple
-    textPrimary: "#ffffff", // White text
-    textSecondary: "#c7d2fe", // Light purple/blue
-    accent: "#a855f7", // Purple accent
-    accentHover: "#c084fc", // Lighter purple hover
-    gradient1: "#8b5cf6", // Violet
-    gradient2: "#ec4899", // Pink
-    gradient3: "#06b6d4", // Cyan
-    neon: "#22d3ee", // Neon cyan
+    background: "#fdf2f8", // Pastel Pink - Màu nền chính
+    backgroundSecondary: "#fce7f3", // Màu nền phụ (hơi đậm hơn)
+    textPrimary: "#831843", // Màu chữ chính (Rose đậm)
+    textSecondary: "#9f1239", // Màu chữ phụ
+    accent: "#fb7185", // Màu nhấn (Rose)
+    accentHover: "#f43f5e", // Màu nhấn khi hover
+    gradient1: "#fdf2f8",
+    gradient2: "#fce7f3",
+    gradient3: "#fb7185",
+    neon: "#fb7185",
   },
 };
 
 export default config;
+

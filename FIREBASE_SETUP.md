@@ -25,7 +25,7 @@ Sau khi tạo database, vào tab **"Rules"** và paste rules sau:
 {
   "rules": {
     "wishes": {
-      ".read": false,
+      ".read": true,
       ".write": true,
       "$wishId": {
         ".validate": "newData.hasChildren(['name', 'wish', 'timestamp'])"
@@ -36,9 +36,10 @@ Sau khi tạo database, vào tab **"Rules"** và paste rules sau:
 ```
 
 **Giải thích:**
-- `.read: false` - Không ai có thể đọc lời chúc (bảo mật)
+- `.read: true` - Cho phép đọc lời chúc (cần thiết cho trang Admin)
 - `.write: true` - Mọi người có thể gửi lời chúc
 - `.validate` - Kiểm tra dữ liệu có đầy đủ trường bắt buộc
+- Bảo mật: Trang admin được bảo vệ bằng mật khẩu ở frontend
 
 Click **"Publish"** để lưu rules.
 
