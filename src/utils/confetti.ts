@@ -107,7 +107,6 @@ export const fireSideConfetti = () => {
  */
 export const fireEmojiRain = () => {
   const scalar = 2;
-  const hearts = ['❤️', '💕', '💖', '💗', '💓', '💝', '⭐', '✨', '🌟'];
 
   const defaults = {
     spread: 360,

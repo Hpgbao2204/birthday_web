@@ -20,7 +20,7 @@ const AdminWishes = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   // Mật khẩu đơn giản - bạn có thể thay đổi
-  const ADMIN_PASSWORD = 'kzy2003'; // Đổi thành mật khẩu của bạn
+  const ADMIN_PASSWORD = import.meta.env.VITE_ADMIN_PASSWORD; // Đổi thành mật khẩu của bạn
 
   useEffect(() => {
     if (isAuthenticated && isFirebaseConfigured && database) {
