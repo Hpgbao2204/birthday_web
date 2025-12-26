@@ -47,13 +47,7 @@ const WishForm = () => {
         // Hiển thị thông báo cảm ơn
         setSubmitted(true);
 
-        // Reset form sau 4 giây
-        setTimeout(() => {
-          setSubmitted(false);
-          setName('');
-          setWish('');
-          setIsSubmitting(false);
-        }, 4000);
+        setIsSubmitting(false);
       } catch (error) {
         console.error('❌ Lỗi khi gửi lời chúc:', error);
         alert('Có lỗi xảy ra! Vui lòng thử lại.');
