@@ -10,7 +10,6 @@ const ThankYouMessage = ({ name }: ThankYouMessageProps) => {
     <motion.div
       initial={{ scale: 0, opacity: 0, rotate: -180 }}
       animate={{ scale: 1, opacity: 1, rotate: 0 }}
-      exit={{ scale: 0, opacity: 0, rotate: 180 }}
       transition={{
         type: 'spring',
         stiffness: 200,
@@ -39,6 +38,7 @@ const ThankYouMessage = ({ name }: ThankYouMessageProps) => {
         initial={{ y: 20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.2 }}
+        viewport={{ once: true }}
         className="space-y-3 md:space-y-4 max-w-2xl mx-auto"
       >
         <h3
@@ -106,16 +106,6 @@ const ThankYouMessage = ({ name }: ThankYouMessageProps) => {
       >
         ✨
       </motion.div>
-
-      <motion.p
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.5 }}
-        className="text-sm mt-6"
-        style={{ color: config.colors.textSecondary }}
-      >
-        Tự động quay lại form sau vài giây... ⏳
-      </motion.p>
     </motion.div>
   );
 };

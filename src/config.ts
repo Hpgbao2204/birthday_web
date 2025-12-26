@@ -7,7 +7,6 @@ export interface BirthdayConfig {
   hero: {
     name: string;
     birthday: string;
-    mainMessage: string;
     subMessage: string;
   };
   images: string[];
@@ -29,8 +28,7 @@ const config: BirthdayConfig = {
   // Thông tin nhân vật chính
   hero: {
     name: "Kzy", // Tên người được chúc mừng
-    birthday: "14/12/2003", // Ngày sinh nhật
-    mainMessage: "✨ Chào mừng đến với ngưỡng cửa 22 tuổi ✨", // Lời chúc chính
+    birthday: "27/12/2003", // Ngày sinh nhật
     subMessage: "Cảm ơn cả nhà vì đã dành chút thời gian ghé thăm góc nhỏ này của em vào một ngày đặc biệt.\n\nTuổi 22 đã gõ cửa. Em tin rằng bất cứ ai xuất hiện trong cuộc đời mình – dù mang đến niềm vui hay để lại nỗi buồn, dù rời đi hay ở lại – tất cả đều là cái duyên, và mỗi cuộc gặp gỡ đều là một sự sắp đặt kỳ diệu. Cảm ơn mọi người vì đã là những mảnh ghép không thể thiếu để tạo nên Kzy của ngày hôm nay.\n\nĐứng trước ngưỡng cửa mới, em muốn nhìn lại chặng đường đã qua để hoàn thiện bản thân hơn. Nếu trong những tháng ngày cũ, em có điều gì khiến mọi người chưa hài lòng, hay đơn giản là có đôi lời muốn nhắn gửi, xin nhờ cả nhà chia sẻ ở đây nhé ạ.", // Lời chúc phụ
   },
 
