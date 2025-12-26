@@ -85,9 +85,9 @@ const WishForm = () => {
           }}
         />
 
-        <div className="relative bg-white/95 backdrop-blur-md rounded-2xl p-6 shadow-xl">
+        <div className="relative bg-white/95 backdrop-blur-md rounded-2xl p-4 md:p-6 shadow-xl">
           <h3
-            className="text-2xl md:text-3xl font-bold text-center mb-6"
+            className="text-xl md:text-2xl lg:text-3xl font-bold text-center mb-4 md:mb-6"
             style={{ color: config.colors.textPrimary }}
           >
             ✍️ Gửi lời chúc của bạn
@@ -106,7 +106,7 @@ const WishForm = () => {
                 {/* Input tên */}
                 <div className="relative">
                   <label
-                    className="block text-sm font-semibold mb-2"
+                    className="block text-xs md:text-sm font-semibold mb-2"
                     style={{ color: config.colors.textPrimary }}
                   >
                     Tên của bạn
@@ -118,7 +118,7 @@ const WishForm = () => {
                     onFocus={() => setIsFocused(true)}
                     onBlur={() => setIsFocused(false)}
                     placeholder="Nhập tên của bạn..."
-                    className="w-full px-4 py-3 rounded-2xl border-2 focus:outline-none focus:ring-2 transition-all"
+                    className="w-full px-3 py-2.5 md:px-4 md:py-3 rounded-2xl border-2 focus:outline-none focus:ring-2 transition-all text-sm md:text-base"
                     style={{
                       borderColor: config.colors.backgroundSecondary,
                       backgroundColor: config.colors.background,
@@ -131,7 +131,7 @@ const WishForm = () => {
                 {/* Textarea lời chúc */}
                 <div className="relative">
                   <label
-                    className="block text-sm font-semibold mb-2"
+                    className="block text-xs md:text-sm font-semibold mb-2"
                     style={{ color: config.colors.textPrimary }}
                   >
                     Lời chúc
@@ -143,7 +143,7 @@ const WishForm = () => {
                     onBlur={() => setIsFocused(false)}
                     placeholder="Viết lời chúc của bạn..."
                     rows={4}
-                    className="w-full px-4 py-3 rounded-2xl border-2 focus:outline-none focus:ring-2 transition-all resize-none"
+                    className="w-full px-3 py-2.5 md:px-4 md:py-3 rounded-2xl border-2 focus:outline-none focus:ring-2 transition-all resize-none text-sm md:text-base"
                     style={{
                       borderColor: config.colors.backgroundSecondary,
                       backgroundColor: config.colors.background,
@@ -159,7 +159,7 @@ const WishForm = () => {
                   disabled={isSubmitting}
                   whileHover={!isSubmitting ? { scale: 1.05, y: -2 } : {}}
                   whileTap={!isSubmitting ? { scale: 0.95 } : {}}
-                  className="w-full py-3 rounded-2xl font-bold text-white text-lg shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full py-2.5 md:py-3 rounded-2xl font-bold text-white text-base md:text-lg shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                   style={{
                     background: `linear-gradient(135deg, ${config.colors.accent}, ${config.colors.accentHover})`,
                   }}

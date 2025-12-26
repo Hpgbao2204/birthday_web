@@ -61,18 +61,18 @@ const AdminWishes = () => {
     return (
       <div className="min-h-screen relative overflow-hidden">
         <SoftBackground />
-        <div className="relative z-10 min-h-screen flex items-center justify-center p-8">
+        <div className="relative z-10 min-h-screen flex items-center justify-center p-4 md:p-8">
           <div className="max-w-md w-full">
             <div
-              className="bg-white/95 backdrop-blur-md rounded-3xl p-12 shadow-2xl"
+              className="bg-white/95 backdrop-blur-md rounded-3xl p-8 md:p-12 shadow-2xl"
               style={{ border: `3px solid ${config.colors.accent}` }}
             >
-              <div className="text-center mb-8">
-                <div className="text-6xl mb-4">🔐</div>
+              <div className="text-center mb-6 md:mb-8">
+                <div className="text-5xl md:text-6xl mb-4">🔐</div>
               </div>
 
               <h1
-                className="text-3xl font-bold text-center mb-6"
+                className="text-2xl md:text-3xl font-bold text-center mb-6"
                 style={{ color: config.colors.textPrimary }}
               >
                 Trang Admin
@@ -81,7 +81,7 @@ const AdminWishes = () => {
               <form onSubmit={handleLogin} className="space-y-4">
                 <div>
                   <label
-                    className="block text-sm font-semibold mb-2"
+                    className="block text-xs md:text-sm font-semibold mb-2"
                     style={{ color: config.colors.textPrimary }}
                   >
                     Mật khẩu
@@ -91,7 +91,7 @@ const AdminWishes = () => {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     placeholder="Nhập mật khẩu..."
-                    className="w-full px-4 py-3 rounded-2xl border-2 focus:outline-none focus:ring-2 transition-all"
+                    className="w-full px-3 py-2.5 md:px-4 md:py-3 rounded-2xl border-2 focus:outline-none focus:ring-2 transition-all text-sm md:text-base"
                     style={{
                       borderColor: config.colors.backgroundSecondary,
                       backgroundColor: config.colors.background,
@@ -102,7 +102,7 @@ const AdminWishes = () => {
 
                 <button
                   type="submit"
-                  className="w-full py-3 rounded-2xl font-bold text-white text-lg shadow-xl"
+                  className="w-full py-2.5 md:py-3 rounded-2xl font-bold text-white text-base md:text-lg shadow-xl"
                   style={{
                     background: `linear-gradient(135deg, ${config.colors.accent}, ${config.colors.accentHover})`,
                   }}
@@ -114,7 +114,7 @@ const AdminWishes = () => {
               <div className="text-center mt-6">
                 <Link to="/">
                   <button
-                    className="text-sm"
+                    className="text-xs md:text-sm"
                     style={{ color: config.colors.textSecondary }}
                   >
                     ← Quay lại trang chủ
@@ -146,12 +146,12 @@ const AdminWishes = () => {
   return (
     <div className="min-h-screen relative overflow-hidden">
       <SoftBackground />
-      <div className="relative z-10 min-h-screen p-8">
+      <div className="relative z-10 min-h-screen p-4 md:p-8">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
-          <div className="flex justify-between items-center mb-8">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4 mb-6 md:mb-8">
             <h1
-              className="text-4xl font-bold"
+              className="text-2xl md:text-3xl lg:text-4xl font-bold text-center md:text-left"
               style={{
                 background: `linear-gradient(135deg, ${config.colors.accent}, ${config.colors.accentHover})`,
                 WebkitBackgroundClip: 'text',
@@ -163,7 +163,7 @@ const AdminWishes = () => {
             </h1>
             <Link to="/">
               <button
-                className="px-6 py-3 rounded-2xl font-bold text-white shadow-xl"
+                className="px-4 py-2 md:px-6 md:py-3 rounded-2xl font-bold text-white shadow-xl text-sm md:text-base"
                 style={{
                   background: `linear-gradient(135deg, ${config.colors.accent}, ${config.colors.accentHover})`,
                 }}
@@ -176,28 +176,28 @@ const AdminWishes = () => {
           {/* Wishes Grid */}
           {wishes.length === 0 ? (
             <div
-              className="bg-white/95 backdrop-blur-md rounded-3xl p-12 text-center shadow-xl"
+              className="bg-white/95 backdrop-blur-md rounded-3xl p-8 md:p-12 text-center shadow-xl"
               style={{ border: `3px solid ${config.colors.accent}` }}
             >
-              <div className="text-6xl mb-4">📭</div>
-              <p className="text-xl" style={{ color: config.colors.textPrimary }}>
+              <div className="text-5xl md:text-6xl mb-4">📭</div>
+              <p className="text-lg md:text-xl" style={{ color: config.colors.textPrimary }}>
                 Chưa có lời chúc nào
               </p>
             </div>
           ) : (
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
               {wishes.map((wish) => (
                 <div
                   key={wish.id}
-                  className="bg-white/95 backdrop-blur-md rounded-3xl p-6 shadow-xl"
+                  className="bg-white/95 backdrop-blur-md rounded-3xl p-4 md:p-6 shadow-xl"
                   style={{ border: `2px solid ${config.colors.accent}` }}
                 >
                   {/* Header */}
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="text-3xl">💌</div>
+                  <div className="flex items-center gap-2 md:gap-3 mb-3 md:mb-4">
+                    <div className="text-2xl md:text-3xl">💌</div>
                     <div className="flex-1">
                       <h3
-                        className="font-bold text-lg"
+                        className="font-bold text-base md:text-lg"
                         style={{ color: config.colors.textPrimary }}
                       >
                         {wish.name}
@@ -213,7 +213,7 @@ const AdminWishes = () => {
 
                   {/* Message */}
                   <p
-                    className="leading-relaxed whitespace-pre-line"
+                    className="text-sm md:text-base leading-relaxed whitespace-pre-line"
                     style={{ color: config.colors.textSecondary }}
                   >
                     {wish.wish}
