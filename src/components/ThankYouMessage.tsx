@@ -39,18 +39,35 @@ const ThankYouMessage = ({ name }: ThankYouMessageProps) => {
         initial={{ y: 20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.2 }}
+        className="space-y-4 max-w-2xl mx-auto"
       >
         <h3
-          className="text-3xl md:text-4xl font-bold mb-2"
+          className="text-3xl md:text-4xl font-bold mb-4"
           style={{ color: config.colors.accent }}
         >
           Cảm ơn {name}! 💕
         </h3>
+
         <p
-          className="text-lg"
+          className="text-base md:text-lg leading-relaxed px-4"
+          style={{ color: config.colors.textPrimary }}
+        >
+          Cảm ơn <span className="font-semibold" style={{ color: config.colors.accent }}>{name}</span> đã để lại những dòng nhắn gửi trân quý này.
+          Đây chính là món quà sinh nhật tuyệt vời nhất để em bước vào tuổi 22 vững vàng hơn. 🎂✨
+        </p>
+
+        <p
+          className="text-base md:text-lg leading-relaxed px-4"
+          style={{ color: config.colors.textPrimary }}
+        >
+          Chúc <span className="font-semibold" style={{ color: config.colors.accent }}>{name}</span> một ngày thật bình yên nhé! 🌸
+        </p>
+
+        <p
+          className="text-base md:text-lg leading-relaxed px-4 italic"
           style={{ color: config.colors.textSecondary }}
         >
-          Lời chúc của bạn đã được gửi đi! ✨
+          Một lần nữa, cảm ơn <span className="font-semibold" style={{ color: config.colors.accent }}>{name}</span> vì đã là một phần trong "sự sắp đặt kỳ diệu" của cuộc đời Kzy. 💫
         </p>
       </motion.div>
 
@@ -94,10 +111,10 @@ const ThankYouMessage = ({ name }: ThankYouMessageProps) => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.5 }}
-        className="text-sm"
+        className="text-sm mt-6"
         style={{ color: config.colors.textSecondary }}
       >
-        Đang quay lại form...
+        Tự động quay lại form sau vài giây... ⏳
       </motion.p>
     </motion.div>
   );
