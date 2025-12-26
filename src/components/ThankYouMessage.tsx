@@ -29,7 +29,7 @@ const ThankYouMessage = ({ name }: ThankYouMessageProps) => {
           repeat: Infinity,
           ease: 'easeInOut',
         }}
-        className="text-6xl"
+        className="text-5xl md:text-6xl"
       >
         🎉
       </motion.div>
@@ -39,17 +39,17 @@ const ThankYouMessage = ({ name }: ThankYouMessageProps) => {
         initial={{ y: 20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.2 }}
-        className="space-y-4 max-w-2xl mx-auto"
+        className="space-y-3 md:space-y-4 max-w-2xl mx-auto"
       >
         <h3
-          className="text-3xl md:text-4xl font-bold mb-4"
+          className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-4"
           style={{ color: config.colors.accent }}
         >
           Cảm ơn {name}! 💕
         </h3>
 
         <p
-          className="text-base md:text-lg leading-relaxed px-4"
+          className="text-sm md:text-base lg:text-lg leading-relaxed px-3 md:px-4"
           style={{ color: config.colors.textPrimary }}
         >
           Cảm ơn <span className="font-semibold" style={{ color: config.colors.accent }}>{name}</span> đã để lại những dòng nhắn gửi trân quý này.
@@ -57,14 +57,14 @@ const ThankYouMessage = ({ name }: ThankYouMessageProps) => {
         </p>
 
         <p
-          className="text-base md:text-lg leading-relaxed px-4"
+          className="text-sm md:text-base lg:text-lg leading-relaxed px-3 md:px-4"
           style={{ color: config.colors.textPrimary }}
         >
           Chúc <span className="font-semibold" style={{ color: config.colors.accent }}>{name}</span> một ngày thật bình yên nhé! 🌸
         </p>
 
         <p
-          className="text-base md:text-lg leading-relaxed px-4 italic"
+          className="text-sm md:text-base lg:text-lg leading-relaxed px-3 md:px-4 italic"
           style={{ color: config.colors.textSecondary }}
         >
           Một lần nữa, cảm ơn <span className="font-semibold" style={{ color: config.colors.accent }}>{name}</span> vì đã là một phần trong "sự sắp đặt kỳ diệu" của cuộc đời Kzy. 💫
@@ -72,7 +72,7 @@ const ThankYouMessage = ({ name }: ThankYouMessageProps) => {
       </motion.div>
 
       {/* Floating hearts */}
-      <div className="flex justify-center gap-4 text-2xl">
+      <div className="flex justify-center gap-3 md:gap-4 text-xl md:text-2xl">
         {['❤️', '💖', '💝', '💕', '💗'].map((heart, index) => (
           <motion.div
             key={index}
